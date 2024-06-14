@@ -1,0 +1,40 @@
+<div class="container mt-5 ">
+    <div class=" d-flex justify-content-end  ">
+        <button mat-flat-button color="primary" (click)="openDialog()">Add User +</button>
+    </div>
+
+
+   <div class="pt-5">
+    <mat-table [dataSource]="userData" class="mat-elevation-z8">
+       
+        <ng-container matColumnDef="userName">
+          <mat-header-cell *matHeaderCellDef> User Name</mat-header-cell>
+          <mat-cell *matCellDef="let element" > {{element.userName}} </mat-cell>
+        </ng-container>
+      
+       
+        <ng-container matColumnDef="phNo">
+          <mat-header-cell *matHeaderCellDef> Phone Number </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.phNo}} </mat-cell>
+        </ng-container>
+      
+       
+        <ng-container matColumnDef="email">
+          <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+            <mat-cell *matCellDef="let element" >
+                <mat-icon (click)="editData(element)">edit</mat-icon>
+                 <mat-icon (click)="deleteData(element.id)">delete</mat-icon>
+            </mat-cell>
+          </ng-container>
+      
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+   </div>
+
+</div>

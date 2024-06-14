@@ -1,0 +1,85 @@
+ //start
+ .progress-bar {
+    // background: #e7e7e7;
+    background: #000000;
+    height: 14px;
+    // border-radius: 10px;
+    // height: 11px;
+    // margin: 30px 0 17px;
+    position: relative;
+    overflow: initial;
+    margin-top: 5px;
+
+    .progress-line {
+      background-color: #4db54d;
+      border-radius: 10px;
+      position: relative;
+      height: 13px;
+      transition: width 1s;
+      min-width: 30px;
+      max-width: 100%;
+    }
+
+    .progress-circle {
+      // background-color: #4db54d;
+      border-radius: 50%;
+      color: #fff;
+      line-height: 32px;
+      text-align: center;
+      font-size: 12px;
+      position: absolute;
+      top: -11px;
+      right: 0;
+      height: 32px;
+      width: 32px;
+      z-index: 9;
+      img{
+        width: 100px;
+        position: absolute;
+        top: -15px;
+        // transform: scaleX(-1);
+      }
+      span{
+          position: absolute;
+          width: 32px;
+          background-color: #ffffff;
+          border-radius: 50px;
+          right: 0;
+          bottom: 10%;
+          color: black;
+          font-size: 12px;
+          font-weight: 700;
+          left: 120px;
+          border: 3px solid #51b255;
+        &:after{
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          transform: rotate(0deg);
+          border-top: 11px solid transparent;
+          border-right: 11px solid #51b255;
+          border-bottom: 11px solid transparent;
+          bottom: 5px;
+          right: 28px;
+        }
+      }
+    }
+    &::after{
+      content: "";
+      height: 1px;
+      position: absolute;
+      bottom: 5px;
+      right: 0;
+      width: 100%;
+      border-top: 3px dashed;   
+    }
+  }
+  //end
+
+
+  .vertical-divider-dashed {
+    border-right-style: dashed;
+    border-right-width: 1px;
+    border-color: #7070708c;
+  }
